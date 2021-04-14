@@ -77,29 +77,13 @@
                 <skipTests>true</skipTests>
             </properties>
         </profile>
-        <profile>
+        <!--<profile>
             <id>test</id>
             <properties>
                 <envName>test</envName>
                 <skipTests>false</skipTests>
             </properties>
-        </profile>
-    </profiles>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>com.heroku.sdk</groupId>
-                <artifactId>heroku-maven-plugin</artifactId>
-                <configuration>
-                    <processTypes>
-                        <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
-                    </processTypes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-    <profiles>
+        </profile>-->
         <profile>
             <id>test</id>
             <build>
@@ -114,21 +98,9 @@
                 </plugins>
             </build>
         </profile>
-        <profile>
-            <id>prod</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.heroku.sdk</groupId>
-                        <artifactId>heroku-maven-plugin</artifactId>
-                        <configuration>
-                            <appName>myapp-prod</appName>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
     </profiles>
+
+
 
     <build>
         <finalName>${project.artifactId}</finalName>
@@ -148,7 +120,15 @@
         </resources>
 
         <plugins>
-
+            <plugin>
+                <groupId>com.heroku.sdk</groupId>
+                <artifactId>heroku-maven-plugin</artifactId>
+                <configuration>
+                    <processTypes>
+                        <web>java -jar target/steve.jar</web>
+                    </processTypes>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>com.mycila</groupId>
                 <artifactId>license-maven-plugin</artifactId>
