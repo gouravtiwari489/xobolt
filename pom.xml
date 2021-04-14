@@ -109,6 +109,7 @@
                 <artifactId>license-maven-plugin</artifactId>
                 <version>4.0</version>
                 <configuration>
+                    <skip>true</skip>
                     <header>LICENSE-HEADER.txt</header>
                     <properties>
                         <owner>${project.organization.name}</owner>
@@ -127,7 +128,6 @@
                         <exclude>**/*.yml</exclude>
                         <exclude>**/*.yaml</exclude>
                         <exclude>**/*.PNG</exclude>
-                        <exclude>**/*.java</exclude>
                         <exclude>**/Dockerfile</exclude>
                         <!-- <exclude>**/*.jsp</exclude> -->
 
