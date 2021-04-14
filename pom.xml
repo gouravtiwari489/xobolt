@@ -104,7 +104,7 @@
         </resources>
 
         <plugins>
-            <!--<plugin>
+            <plugin>
                 <groupId>com.mycila</groupId>
                 <artifactId>license-maven-plugin</artifactId>
                 <version>4.0</version>
@@ -128,7 +128,7 @@
                         <exclude>**/*.yaml</exclude>
                         <exclude>**/*.PNG</exclude>
                         <exclude>**/Dockerfile</exclude>
-                        &lt;!&ndash; <exclude>**/*.jsp</exclude> &ndash;&gt;
+                        <!-- <exclude>**/*.jsp</exclude> -->
 
                     </excludes>
                     <mapping>
@@ -142,7 +142,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>-->
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
