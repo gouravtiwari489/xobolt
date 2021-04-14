@@ -127,6 +127,7 @@
                         <exclude>**/*.yml</exclude>
                         <exclude>**/*.yaml</exclude>
                         <exclude>**/*.PNG</exclude>
+                        <exclude>**/*.java</exclude>
                         <exclude>**/Dockerfile</exclude>
                         <!-- <exclude>**/*.jsp</exclude> -->
 
@@ -274,6 +275,8 @@
                     </archive>
                 </configuration>
             </plugin>
+
+
 
             <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
