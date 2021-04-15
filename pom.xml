@@ -77,30 +77,14 @@
                 <skipTests>true</skipTests>
             </properties>
         </profile>
-        <!--<profile>
+        <profile>
             <id>test</id>
             <properties>
                 <envName>test</envName>
                 <skipTests>false</skipTests>
             </properties>
-        </profile>-->
-        <profile>
-            <id>test</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.heroku.sdk</groupId>
-                        <artifactId>heroku-maven-plugin</artifactId>
-                        <configuration>
-                            <appName>myapp-test</appName>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
     </profiles>
-
-
 
     <build>
         <finalName>${project.artifactId}</finalName>
@@ -121,20 +105,10 @@
 
         <plugins>
             <plugin>
-                <groupId>com.heroku.sdk</groupId>
-                <artifactId>heroku-maven-plugin</artifactId>
-                <configuration>
-                    <processTypes>
-                        <web>java -jar target/steve.jar</web>
-                    </processTypes>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>com.mycila</groupId>
                 <artifactId>license-maven-plugin</artifactId>
                 <version>4.0</version>
                 <configuration>
-                    <skip>true</skip>
                     <header>LICENSE-HEADER.txt</header>
                     <properties>
                         <owner>${project.organization.name}</owner>
@@ -169,8 +143,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -302,8 +274,6 @@
                     </archive>
                 </configuration>
             </plugin>
-
-
 
             <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
